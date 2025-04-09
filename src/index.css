@@ -30,6 +30,6 @@ body{
     z-index: 9999;         /* Keep it above everything */
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3); /* Optional: dim background */
+    background-color: rgb(0, 0, 0); /* Optional: dim background */
   }
   

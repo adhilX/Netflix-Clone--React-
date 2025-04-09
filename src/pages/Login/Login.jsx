@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from 'react'
 import './Login.css'
 import logo from '../../assets/logo.png'
-import { useNavigate } from 'react-router-dom'
+import { replace, useNavigate } from 'react-router-dom'
 import { onAuthStateChanged } from 'firebase/auth'
 import { PuffLoader } from 'react-spinners'
 import { toast } from 'react-toastify'
@@ -22,10 +22,10 @@ function Login() {
             console.log(user)
           if(user){
             console.log('User Logged In')
-            navigate('/')
+            navigate('/',{replace:true})
           }else{
             console.log('User Logged Out')
-            navigate('/login')
+            navigate('/login'),{replace:true}
           }
         })
     },[])
