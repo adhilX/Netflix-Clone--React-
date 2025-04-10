@@ -2,9 +2,17 @@ import "./Banner.css";
 import play_icon from '../../assets/play_icon.png'
 import info_icon from '../../assets/info_icon.png'
 import TitteCards from "../TittleCards/TitteCards";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+
+const styles= { bottom: -30 }
 function  Banner() {
+
+  //useMemo
+  // const styles= useMemo(()=>({ bottom: -30 }))
+
+
   const options = {
     method: 'GET',
     headers: {
@@ -44,7 +52,7 @@ function  Banner() {
             <button className='btn'><img src={play_icon} alt=''/>Play</button>
             <button className='btn dark-btn'><img src={info_icon} alt=''/>More Info</button>
         </div>
-        <TitteCards styleName={{ bottom: -30 }} />
+        <TitteCards styleName={styles} />
      
         </div>
       </div>
@@ -60,4 +68,4 @@ function  Banner() {
     );
 }
 
-export default Banner;
+export default React.memo(Banner);

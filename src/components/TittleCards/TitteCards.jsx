@@ -58,4 +58,4 @@ function TitteCards({ title, category ,styleName}) {
   );
 }
 
-export default TitteCards;
+export default React.memo(TitteCards);
